@@ -9,23 +9,24 @@ module.exports = function (app) {
   app.route('/api/translate')
     .post((req, res) => {
       const { text , locale} = req.body;
-      console.log(text.toLowerCase())
-      console.log(text.toUpperCase())
-      if(!text){
+      let translation = ""
+
+      if(text === undefined || locale === undefined){
+        return res.json({ error: 'Required field(s) missing' })
+      }
+
+      if(text.trim() === ""){
         return res.json({ error : 'No text to translate'})
       }
 
-      if(!text || !locale){
-        return res.json({error: 'Required field(s) missing'})
-      }
-
       if(locale === 'american-to-british'){
-        translator.aremicanToBritish(text);
+        translation = translator.aremicanToBritish(text) 
+       
       } else if(locale === 'british-to-american'){
-        translator.britishToAmerican(text);
+        translation = translator.britishToAmerican(text);
       }else{
         return res.json({error: 'Invalid value for locale field'})
       }
-      
+      return res.json({ text: text , translation: translation})
     });
 };
