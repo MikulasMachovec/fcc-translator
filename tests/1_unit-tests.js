@@ -66,33 +66,95 @@ suite('Unit Tests', () => {
             assert.strictEqual(translator.aremicanToBritish(text),translation)
         });
 
+    });
+
+    suite('British to american translation',()=>{
+        test('We watched the footie match for a while.',()=>{
+            const text = 'We watched the footie match for a while.'
+            const translation = 'We watched the <span class="highlight">soccer</span> match for a while.'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
+
+        test('Paracetamol takes up to an hour to work.',()=>{
+            const text = 'Paracetamol takes up to an hour to work.'
+            const translation = '<span class="highlight">Tylenol</span> takes up to an hour to work.'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
+
+        test('First, caramelise the onions.',()=>{
+            const text = 'First, caramelise the onions.'
+            const translation = 'First, <span class="highlight">caramelize</span> the onions.'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
+
+        test('I spent the bank holiday at the funfair.',()=>{
+            const text = 'I spent the bank holiday at the funfair.'
+            const translation = 'Everything looks good to me!'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
+
+        test('I had a bicky then went to the chippy.',()=>{
+            const text = 'I had a bicky then went to the chippy.'
+            const translation = 'I had a <span class="highlight">cookie</span> then went to the chippy.'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
+
+        test('I\'ve just got bits and bobs in my bum bag.',()=>{
+            const text = 'I\'ve just got bits and bobs in my bum bag.'
+            const translation = 'Everything looks good to me!'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
+
+        test('The car boot sale at Boxted Airfield was called off.',()=>{
+            const text = 'The car boot sale at Boxted Airfield was called off.'
+            const translation = 'Everything looks good to me!'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
+
+        test('Have you met Mrs Kalyani?',()=>{
+            const text = 'Have you met Mrs Kalyani?'
+            const translation = 'Have you met <span class="highlight">Mrs.</span> Kalyani?'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
+
+        test('Prof Joyner of King\'s College, London.',()=>{
+            const text = 'Prof Joyner of King\'s College, London.'
+            const translation = '<span class="highlight">Prof.</span> Joyner of King\'s College, London.'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
+
+        test('Tea time is usually around 4 or 4.30.',()=>{
+            const text = 'Tea time is usually around 4 or 4.30.'
+            const translation = 'Everything looks good to me!'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
+
+    });    
+
+    suite('Highlight translation',()=>{
+        test('Mangoes are my favorite fruit.',()=>{
+            const text = 'Mangoes are my favorite fruit.'
+            const translation = 'Mangoes are my <span class="highlight">favourite</span> fruit.'
+            assert.strictEqual(translator.aremicanToBritish(text),translation)
+        });
+
+        test('I ate yogurt for breakfast.',()=>{
+            const text = 'I ate yogurt for breakfast.'
+            const translation = 'I ate <span class="highlight">yoghurt</span> for breakfast.'
+            assert.strictEqual(translator.aremicanToBritish(text),translation)
+        });
+
+        test('We watched the footie match for a while.',()=>{
+            const text = 'We watched the footie match for a while.'
+            const translation = 'We watched the <span class="highlight">soccer</span> match for a while.'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
+
+        test('Paracetamol takes up to an hour to work.',()=>{
+            const text = 'Paracetamol takes up to an hour to work.'
+            const translation = '<span class="highlight">Tylenol</span> takes up to an hour to work.'
+            assert.strictEqual(translator.britishToAmerican(text),translation)
+        });
     })
 
 });
-/* 
-Translate I ate yogurt for breakfast. to British English
-Translate  to British English
-Translate  to British English
-Translate  to British English
-Translate  to British English
-Translate  to British English
-Translate  to British English
-Translate  to British English
-Translate  to British English
-
-Translate We watched the footie match for a while. to American English
-Translate Paracetamol takes up to an hour to work. to American English
-Translate First, caramelise the onions. to American English
-Translate I spent the bank holiday at the funfair. to American English
-Translate I had a bicky then went to the chippy. to American English
-Translate I've just got bits and bobs in my bum bag. to American English
-Translate The car boot sale at Boxted Airfield was called off. to American English
-Translate Have you met Mrs Kalyani? to American English
-Translate Prof Joyner of King's College, London. to American English
-Translate Tea time is usually around 4 or 4.30. to American English
-
-Highlight translation in Mangoes are my favorite fruit.
-Highlight translation in I ate yogurt for breakfast.
-Highlight translation in We watched the footie match for a while.
-Highlight translation in Paracetamol takes up to an hour to work.
-*/
